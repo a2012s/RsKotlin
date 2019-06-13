@@ -50,17 +50,17 @@ class MovieFragment : BaseFragment() {
     }
 
     private fun fetchHotMovieListFromServer() {
-        fetchHotMovieList().subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
-                .doOnNext { it ->
-                    it?.also {
-                        it.subjects?.also { subjectList ->
-                            mHotMovieAdapter.setNewData(ArrayList(subjectList))
-                            recyclerViewMovie?.smoothScrollToPosition(0)
-                        }
-                    }
-                }.doOnCompleted {
-                    ptrFrameHotMovie?.refreshComplete()
-                }.doOnError { Timber.e(it, "fetchHotMovieList&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&") }.subscribe()
+//        fetchHotMovieList().subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
+//                .doOnNext { it ->
+//                    it?.also {
+//                        it.subjects?.also { subjectList ->
+//                            mHotMovieAdapter.setNewData(ArrayList(subjectList))
+//                            recyclerViewMovie?.smoothScrollToPosition(0)
+//                        }
+//                    }
+//                }.doOnCompleted {
+//                    ptrFrameHotMovie?.refreshComplete()
+//                }.doOnError { Timber.e(it, "fetchHotMovieList&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&") }.subscribe()
     }
 
     private fun initPtrFrame() {
